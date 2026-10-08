@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maltrato y abandono de animales de compañía - México</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'verde-oscuro': '#2C5F2D',
+                        'verde-claro': '#97BC62',
+                        'crema': '#F9F7F3',
+                        'acento': '#FF6B35',
+                    },
+                    fontFamily: {
+                        titulos: ['Montserrat', 'sans-serif'],
+                        texto: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .card-shadow {
+                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            }
+            .popup {
+                display: none;
+                position: absolute;
+                background: white;
+                padding: 12px;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+                z-index: 50;
+                max-width: 250px;
+                top: 110%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .interactive-btn:hover + .popup, .popup:hover {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateX(-50%) translateY(-5px); }
+                to { opacity: 1; transform: translateX(-50%) translateY(0); }
+            }
+            @keyframes pulse-soft {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.03); }
+            }
+            .animate-pulse-soft {
+                animation: pulse-soft 3s infinite ease-in-out;
+            }
+            .number-animate {
+                transition: all 0.8s ease;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-crema font-texto text-gray-800 max-w-4xl mx-auto px-4 py-8">
+    <!-- Encabezado -->
+    <header class="relative mb-12">
+        <div class="absolute top-0 right-0 bg-verde-oscuro text-white p-4 rounded-lg card-shadow">
+            <p class="font-semibold text-right">Diego Armando Domínguez García</p>
+            <p class="text-sm opacity-90 text-right">Licenciatura: Medicina Veterinaria y Zootecnia</p>
+        </div>
+        <h1 class="font-titulos text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-verde-oscuro text-center pt-16 pb-6">
+            Maltrato y abandono de animales de compañía<br>
+            <span class="text-acento">un problema social</span>
+        </h1>
+        <div class="w-full h-1 bg-gradient-to-r from-verde-oscuro via-verde-claro to-acento rounded-full"></div>
+    </header>
+
+    <!-- Sección 1: Datos generales -->
+    <section class="mb-16 bg-white p-8 rounded-xl card-shadow">
+        <h2 class="font-titulos text-2xl font-bold text-verde-oscuro mb-6"><i class="fa fa-info-circle mr-2"></i> Datos generales</h2>
+        <p class="mb-6 text-lg">El abandono y maltrato animal se define como cualquier acción u omisión que ponga en riesgo la vida, salud o bienestar de los animales de compañía. El bienestar animal requiere alimentación adecuada, atención médica, seguridad y condiciones de vida dignas.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div class="p-6 bg-verde-claro/20 rounded-xl number-animate animate-pulse-soft">
+                <p class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-verde-oscuro mb-2">29.7M</p>
+                <p class="font-medium">Perros y gatos en situación de calle en México</p>
+            </div>
+            <div class="p-6 bg-verde-claro/20 rounded-xl number-animate animate-pulse-soft" style="animation-delay: 0.5s">
+                <p class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-acento mb-2">500k</p>
+                <p class="font-medium">Animales abandonados cada año en el país</p>
+            </div>
+            <div class="p-6 bg-verde-claro/20 rounded-xl number-animate animate-pulse-soft" style="animation-delay: 1s">
+                <p class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-verde-oscuro mb-2">4</p>
+                <p class="font-medium">Pilares del bienestar animal: alimentación, salud, seguridad, vida digna</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 2: Consecuencias -->
+    <section class="mb-16 bg-white p-8 rounded-xl card-shadow">
+        <h2 class="font-titulos text-2xl font-bold text-verde-oscuro mb-6"><i class="fa fa-exclamation-triangle mr-2"></i> Consecuencias para los animales</h2>
+        <p class="mb-6">Haz clic sobre cada icono para ver información detallada:</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4">
+            <div class="relative group">
+                <button class="interactive-btn w-full aspect-square bg-verde-claro/20 rounded-xl flex flex-col items-center justify-center p-3 hover:bg-verde-claro/40 transition-all">
+                    <i class="fa fa-cutlery text-3xl text-verde-oscuro mb-2"></i>
+                    <span class="text-sm font-medium">Desnutrición</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Los animales en situación de calle no tienen acceso a alimento constante y sufren desnutrición severa.</p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <button class="interactive-btn w-full aspect-square bg-verde-claro/20 rounded-xl flex flex-col items-center justify-center p-3 hover:bg-verde-claro/40 transition-all">
+                    <i class="fa fa-heartbeat text-3xl text-verde-oscuro mb-2"></i>
+                    <span class="text-sm font-medium">Enfermedades</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Contagio de enfermedades virales, parasitarias y lesiones sin atención veterinaria.</p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <button class="interactive-btn w-full aspect-square bg-verde-claro/20 rounded-xl flex flex-col items-center justify-center p-3 hover:bg-verde-claro/40 transition-all">
+                    <i class="fa fa-frown-o text-3xl text-verde-oscuro mb-2"></i>
+                    <span class="text-sm font-medium">Problemas de conducta</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Estrés crónico, miedo agresivo, ansiedad y trastornos de comportamiento por falta de socialización.</p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <button class="interactive-btn w-full aspect-square bg-verde-claro/20 rounded-xl flex flex-col items-center justify-center p-3 hover:bg-verde-claro/40 transition-all">
+                    <i class="fa fa-car text-3xl text-verde-oscuro mb-2"></i>
+                    <span class="text-sm font-medium">Atropellamientos</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Alta incidencia de accidentes viales que causan lesiones graves o la muerte.</p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <button class="interactive-btn w-full aspect-square bg-verde-claro/20 rounded-xl flex flex-col items-center justify-center p-3 hover:bg-verde-claro/40 transition-all">
+                    <i class="fa fa-paw text-3xl text-verde-oscuro mb-2"></i>
+                    <span class="text-sm font-medium">Reproducción sin control</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Genera más camadas de animales que posteriormente también quedan en situación de calle.</p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <button class="interactive-btn w-full aspect-square bg-verde-claro/20 rounded-xl flex flex-col items-center justify-center p-3 hover:bg-verde-claro/40 transition-all">
+                    <i class="fa fa-hand-paper-o text-3xl text-verde-oscuro mb-2"></i>
+                    <span class="text-sm font-medium">Maltrato</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Exposición a violencia, abuso y actos de crueldad por parte de personas externas.</p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <button class="interactive-btn w-full aspect-square bg-verde-claro/20 rounded-xl flex flex-col items-center justify-center p-3 hover:bg-verde-claro/40 transition-all">
+                    <i class="fa fa-users text-3xl text-verde-oscuro mb-2"></i>
+                    <span class="text-sm font-medium">Crecimiento de población callejera</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Se genera un ciclo sin fin de más animales en situación de calle sin solución.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 3: Impacto social -->
+    <section class="mb-16 bg-white p-8 rounded-xl card-shadow">
+        <h2 class="font-titulos text-2xl font-bold text-verde-oscuro mb-6"><i class="fa fa-users mr-2"></i> Impacto social</h2>
+        <p class="mb-6">Este problema no afecta únicamente a los animales, tiene consecuencias directas para toda la sociedad:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <ul class="space-y-3">
+                <li class="flex items-start gap-3"><i class="fa fa-check-circle text-verde-oscuro mt-1"></i> Problemas graves de salud pública</li>
+                <li class="flex items-start gap-3"><i class="fa fa-check-circle text-verde-oscuro mt-1"></i> Riesgo de transmisión de enfermedades infecciosas y parasitarias</li>
+                <li class="flex items-start gap-3"><i class="fa fa-check-circle text-verde-oscuro mt-1"></i> Aumento de accidentes y mordeduras a personas</li>
+            </ul>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-3"><i class="fa fa-check-circle text-verde-oscuro mt-1"></i> Contaminación por heces y desechos en espacios públicos</li>
+                <li class="flex items-start gap-3"><i class="fa fa-check-circle text-verde-oscuro mt-1"></i> Saturación total de refugios y albergues existentes</li>
+                <li class="flex items-start gap-3"><i class="fa fa-check-circle text-verde-oscuro mt-1"></i> Gastos elevados de recursos públicos destinados a atención de animales abandonados</li>
+            </ul>
+        </div>
+        <div class="p-6 bg-acento/10 rounded-xl text-center animate-pulse-soft">
+            <p class="text-sm mb-2">Denuncias de maltrato animal registradas por la PAOT CDMX:</p>
+            <p class="text-3xl font-bold text-acento">+2,000 denuncias por año</p>
+        </div>
+    </section>
+
+    <!-- Sección 4: Soluciones -->
+    <section class="mb-16 bg-white p-8 rounded-xl card-shadow">
+        <h2 class="font-titulos text-2xl font-bold text-verde-oscuro mb-6"><i class="fa fa-lightbulb-o mr-2"></i> ¿Qué podemos hacer?</h2>
+        <p class="mb-6">Haz clic en cada botón para ver la información detallada de cada acción:</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div class="relative group">
+                <button class="interactive-btn w-full p-4 bg-verde-oscuro text-white rounded-xl hover:bg-verde-oscuro/90 transition-all text-center">
+                    <i class="fa fa-home text-2xl mb-2 block"></i>
+                    <span class="font-medium">Adoptar responsablemente</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Adopta únicamente de refugios, no compres animales de criaderos.</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <button class="interactive-btn w-full p-4 bg-verde-oscuro text-white rounded-xl hover:bg-verde-oscuro/90 transition-all text-center">
+                    <i class="fa fa-heart text-2xl mb-2 block"></i>
+                    <span class="font-medium">Esterilizar</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">La esterilización es la única medida efectiva para controlar la sobrepoblación.</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <button class="interactive-btn w-full p-4 bg-verde-oscuro text-white rounded-xl hover:bg-verde-oscuro/90 transition-all text-center">
+                    <i class="fa fa-medkit text-2xl mb-2 block"></i>
+                    <span class="font-medium">Vacunar y desparasitar</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Mantén el esquema de vacunación al día y desparasitaciones periódicas.</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <button class="interactive-btn w-full p-4 bg-verde-oscuro text-white rounded-xl hover:bg-verde-oscuro/90 transition-all text-center">
+                    <i class="fa fa-cutlery text-2xl mb-2 block"></i>
+                    <span class="font-medium">Atención veterinaria</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Lleva a tu mascota a revisiones periódicas con un profesional veterinario.</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <button class="interactive-btn w-full p-4 bg-verde-oscuro text-white rounded-xl hover:bg-verde-oscuro/90 transition-all text-center">
+                    <i class="fa fa-id-card text-2xl mb-2 block"></i>
+                    <span class="font-medium">Identificar a tus mascotas</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Usa placas de identificación y microchip para que no se pierdan.</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <button class="interactive-btn w-full p-4 bg-verde-oscuro text-white rounded-xl hover:bg-verde-oscuro/90 transition-all text-center">
+                    <i class="fa fa-ban text-2xl mb-2 block"></i>
+                    <span class="font-medium">No abandones</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">El abandono es un delito en la mayoría de entidades del país.</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <button class="interactive-btn w-full p-4 bg-verde-oscuro text-white rounded-xl hover:bg-verde-oscuro/90 transition-all text-center">
+                    <i class="fa fa-exclamation-circle text-2xl mb-2 block"></i>
+                    <span class="font-medium">Denunciar maltrato</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Reporta cualquier caso de maltrato a las autoridades correspondientes.</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <button class="interactive-btn w-full p-4 bg-verde-oscuro text-white rounded-xl hover:bg-verde-oscuro/90 transition-all text-center">
+                    <i class="fa fa-heart-o text-2xl mb-2 block"></i>
+                    <span class="font-medium">Apoyar refugios</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Dona, voluntaria o ayuda a los refugios responsables de tu comunidad.</p>
+                </div>
+            </div>
+            <div class="relative group col-span-2 sm:col-span-1">
+                <button class="interactive-btn w-full p-4 bg-verde-oscuro text-white rounded-xl hover:bg-verde-oscuro/90 transition-all text-center">
+                    <i class="fa fa-graduation-cap text-2xl mb-2 block"></i>
+                    <span class="font-medium">Educar sobre bienestar animal</span>
+                </button>
+                <div class="popup">
+                    <p class="text-sm">Comparte información y concientiza a otras personas sobre la tenencia responsable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 5: Llamado a la acción -->
+    <section class="mb-16 bg-gradient-to-r from-verde-oscuro to-verde-claro p-10 rounded-xl text-white text-center animate-pulse-soft">
+        <h2 class="font-titulos text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4">¡No abandones, no maltrates y no seas indiferente!</h2>
+        <p class="text-xl">Adopta responsablemente, esteriliza, vacuna, cuida y denuncia el maltrato.</p>
+    </section>
+
+    <!-- Sección 6: Referencias -->
+    <section class="mb-16 bg-white p-8 rounded-xl card-shadow">
+        <h2 class="font-titulos text-2xl font-bold text-verde-oscuro mb-6"><i class="fa fa-book mr-2"></i> Referencias APA 7</h2>
+        <div class="space-y-4 mb-8">
+            <div class="relative group p-3 hover:bg-verde-claro/10 rounded-lg cursor-pointer transition-all">
+                <p class="text-sm">Herrera, P., & Rojas, D. (2024, 5 de septiembre). UNAM: soluciones al abandono de perros y gatos en México. UNAM Global.</p>
+                <div class="popup" style="left: auto; right: 0;">
+                    <p class="text-sm">Estudio actualizado sobre la situación de animales en situación de calle en la CDMX.</p>
+                </div>
+            </div>
+            <div class="relative group p-3 hover:bg-verde-claro/10 rounded-lg cursor-pointer transition-all">
+                <p class="text-sm">Procuraduría Ambiental y del Ordenamiento Territorial de la Ciudad de México. (s. f.). PAOT en cifras: Maltrato animal. Gobierno de la Ciudad de México.</p>
+                <div class="popup" style="left: auto; right: 0;">
+                    <p class="text-sm">Base de datos oficial de denuncias registradas por maltrato animal en la capital.</p>
+                </div>
+            </div>
+            <div class="relative group p-3 hover:bg-verde-claro/10 rounded-lg cursor-pointer transition-all">
+                <p class="text-sm">Organización Mundial de Sanidad Animal. (s. f.). Bienestar animal. OMSA.</p>
+                <div class="popup" style="left: auto; right: 0;">
+                    <p class="text-sm">Guía internacional oficial sobre los lineamientos globales de bienestar animal.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-8 justify-center">
+            <div class="text-center">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.woah.org/es/what-we-do/animal-welfare/" alt="Código QR OMSA" class="border p-2 rounded-lg mb-2">
+                <p class="text-sm">Escanea el código para visitar la página de la OMSA</p>
+            </div>
+            <div class="w-full max-w-sm">
+                <p class="text-sm mb-3">Video educativo sobre bienestar animal:</p>
+                <div class="aspect-video rounded-lg overflow-hidden">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8gUJZ8gKzG4" title="Video bienestar animal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center text-gray-500 text-sm pb-8">
+        <p>Trabajo universitario - Licenciatura en Medicina Veterinaria y Zootecnia</p>
+    </footer>
+
+</body>
+</html>
